@@ -22,26 +22,28 @@ open class Module: ModuleType {
         self.dismissBlock = dismissBlock
     }
     
-    public func execute<T>(networking: NetworkingType, request: InternalRequest, completionHandler: @escaping (Result<T>) -> Void) where T : Decodable, T : Encodable {
+    public func execute<T>(networking: NetworkingType,
+                           request: InternalRequest,
+                           completionHandler: @escaping (Result<T>) -> Void) {
         guard let completionBlock = completionHandler as? ((Result<EmailResponse>) -> Void) else {
             completionHandler(.error(ResponseError.badRequest400(error: nil)))
             return
         }
         
-        let dataProvider = DataProvider(networking: networking)
-        
         var viewController: UIViewController!
         if let request = request as? EmailListRequest {
-            viewController = EmailListBuilder.make(dataProvider: dataProvider, requestBody: request.data,
+            viewController = EmailListBuilder.make(networking: networking,
+                                                   requestBody: request.data,
                                                    isSelection: false) { result in
-                                                    self.dismissBlock(viewController)
-                                                    completionBlock(result)
+                self.dismissBlock(viewController)
+                completionBlock(result)
             }
         } else if let request = request as? EmailSelectionRequest {
-            viewController = EmailListBuilder.make(dataProvider: dataProvider, requestBody: request.data,
+            viewController = EmailListBuilder.make(networking: networking,
+                                                   requestBody: request.data,
                                                    isSelection: true) { result in
-                                                    self.dismissBlock(viewController)
-                                                    completionBlock(result)
+                self.dismissBlock(viewController)
+                completionBlock(result)
             }
         } else {
             completionBlock(.error(ResponseError.badRequest400(error: nil)))

@@ -21,10 +21,10 @@ protocol EmailListInteractorType {
 }
 
 final class EmailListInteractor {
-    fileprivate let dataProvider: DataProvider
+    fileprivate let networking: NetworkingType
     
-    init(dataProvider: DataProvider) {
-        self.dataProvider = dataProvider
+    init(networking: NetworkingType) {
+        self.networking = networking
     }
 }
 
@@ -38,19 +38,19 @@ extension EmailListInteractor: EmailListInteractorType {
         let requestBody = EmailDetailsRequestBody(emailID: id)
         let request = EmailDetailsRequest(data: requestBody)
         
-        dataProvider.networking.execute(request: request,
-                                        presentationBlock: presentationBlock,
-                                        dismissBlock: dismissBlock,
-                                        completionHandler: completionHandler)
+        networking.execute(request: request,
+                           presentationBlock: presentationBlock,
+                           dismissBlock: dismissBlock,
+                           completionHandler: completionHandler)
     }
     func showEmailForm(presentationBlock: @escaping (UIViewController) -> Void,
                        dismissBlock: @escaping (UIViewController) -> Void,
                        completionHandler: @escaping (Result<EmailResponse>) -> Void) {
         let requestBody = EmailCreationRequestBody(draftID: nil, receiversIDs: nil, ccIDs: nil, bccIDs: nil, subject: nil, body: nil, attachementsURLs: nil)
         let request = EmailCreationRequest(data: requestBody)
-        dataProvider.networking.execute(request: request,
-                                        presentationBlock: presentationBlock,
-                                        dismissBlock: dismissBlock,
-                                        completionHandler: completionHandler)
+        networking.execute(request: request,
+                           presentationBlock: presentationBlock,
+                           dismissBlock: dismissBlock,
+                           completionHandler: completionHandler)
     }
 }
