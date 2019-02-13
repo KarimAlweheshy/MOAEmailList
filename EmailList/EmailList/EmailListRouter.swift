@@ -9,6 +9,8 @@
 import UIKit
 
 protocol EmailListRouterType {
+    func presentController(_: UIViewController)
+    func dismissController(_: UIViewController)
     func pushController(_: UIViewController)
     func popController(_: UIViewController)
 }
@@ -30,5 +32,12 @@ extension EmailListRouter: EmailListRouterType {
     func popController(_: UIViewController) {
         viewController.navigationController?.popToViewController(viewController,
                                                                  animated: true)
+    }
+    func presentController(_ viewController: UIViewController) {
+        let navigationController = UINavigationController(rootViewController: viewController)
+        self.viewController.present(navigationController, animated: true, completion: nil)
+    }
+    func dismissController(_ viewController: UIViewController) {
+        viewController.dismiss(animated: true, completion: nil)
     }
 }

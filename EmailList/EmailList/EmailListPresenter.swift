@@ -51,8 +51,8 @@ extension EmailListPresenter: EmailListPresenterType {
     }
     
     func didTapAdd() {
-        interactor.showEmailForm(presentationBlock: router.pushController,
-                                 dismissBlock: router.popController) { result in
+        interactor.showEmailForm(presentationBlock: router.presentController,
+                                 dismissBlock: router.dismissController) { result in
             switch result {
             case .success(let newEmail):
                 self.emails.append(newEmail)
