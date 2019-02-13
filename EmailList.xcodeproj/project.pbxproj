@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F66DAB892213FFE3005DD98F /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F66DAB862213FFC6005DD98F /* Networking.framework */; };
 		F66EB4162211CCD000D177C5 /* EmailList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F66EB40C2211CCD000D177C5 /* EmailList.framework */; };
-		F66EB41B2211CCD000D177C5 /* EmailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EB41A2211CCD000D177C5 /* EmailTests.swift */; };
+		F66EB41B2211CCD000D177C5 /* EmailListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EB41A2211CCD000D177C5 /* EmailListTests.swift */; };
 		F66EB4312211CD2F00D177C5 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EB4302211CD2F00D177C5 /* Module.swift */; };
 		F66EB4372211CD5E00D177C5 /* EmailListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EB4362211CD5E00D177C5 /* EmailListBuilder.swift */; };
 		F66EB4392211CD6900D177C5 /* EmailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EB4382211CD6900D177C5 /* EmailListViewController.swift */; };
@@ -51,7 +51,7 @@
 		F66EB40C2211CCD000D177C5 /* EmailList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmailList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66EB4102211CCD000D177C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66EB4152211CCD000D177C5 /* EmailListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmailListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F66EB41A2211CCD000D177C5 /* EmailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTests.swift; sourceTree = "<group>"; };
+		F66EB41A2211CCD000D177C5 /* EmailListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailListTests.swift; sourceTree = "<group>"; };
 		F66EB41C2211CCD000D177C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66EB4302211CD2F00D177C5 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		F66EB4362211CD5E00D177C5 /* EmailListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailListBuilder.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 				F66DAB802213FFC6005DD98F /* Networking.xcodeproj */,
 				F66EB46A2211D1A100D177C5 /* EmailList.playground */,
 				F66EB40E2211CCD000D177C5 /* EmailList */,
-				F66EB4192211CCD000D177C5 /* EmailTests */,
+				F66EB4192211CCD000D177C5 /* EmailListTests */,
 				F66EB40D2211CCD000D177C5 /* Products */,
 				F66EB46B2211D1B000D177C5 /* Frameworks */,
 			);
@@ -127,13 +127,13 @@
 			path = EmailList;
 			sourceTree = "<group>";
 		};
-		F66EB4192211CCD000D177C5 /* EmailTests */ = {
+		F66EB4192211CCD000D177C5 /* EmailListTests */ = {
 			isa = PBXGroup;
 			children = (
-				F66EB41A2211CCD000D177C5 /* EmailTests.swift */,
+				F66EB41A2211CCD000D177C5 /* EmailListTests.swift */,
 				F66EB41C2211CCD000D177C5 /* Info.plist */,
 			);
-			path = EmailTests;
+			path = EmailListTests;
 			sourceTree = "<group>";
 		};
 		F66EB4322211CD3100D177C5 /* EmailList */ = {
@@ -314,7 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F66EB41B2211CCD000D177C5 /* EmailTests.swift in Sources */,
+				F66EB41B2211CCD000D177C5 /* EmailListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,15 +1,15 @@
 //
-//  EmailTests.swift
-//  EmailTests
+//  EmailListTests.swift
+//  EmailListTests
 //
 //  Created by Karim Alweheshy on 2/11/19.
 //  Copyright © 2019 Karim Alweheshy. All rights reserved.
 //
 
 import XCTest
-@testable import Email
+@testable import EmailList
 
-class EmailTests: XCTestCase {
+class EmailListTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
