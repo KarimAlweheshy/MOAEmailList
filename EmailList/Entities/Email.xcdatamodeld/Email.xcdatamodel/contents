@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D42" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Email" representedClassName="Email" syncable="YES" codeGenerationType="class">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attachements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmailAttachements" inverseName="email" inverseEntity="EmailAttachements" syncable="YES"/>
+        <relationship name="bcc" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmailUser" inverseName="blindMentionedEmails" inverseEntity="EmailUser" syncable="YES"/>
+        <relationship name="cc" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmailUser" inverseName="mentionedEmails" inverseEntity="EmailUser" syncable="YES"/>
+        <relationship name="from" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EmailUser" inverseName="receivedEmails" inverseEntity="EmailUser" syncable="YES"/>
+        <relationship name="to" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmailUser" inverseName="sentEmails" inverseEntity="EmailUser" syncable="YES"/>
+    </entity>
+    <entity name="EmailAttachements" representedClassName="EmailAttachements" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="URI" syncable="YES"/>
+        <relationship name="email" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Email" inverseName="attachements" inverseEntity="Email" syncable="YES"/>
+    </entity>
+    <entity name="EmailUser" representedClassName="EmailUser" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="blindMentionedEmails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Email" inverseName="bcc" inverseEntity="Email" syncable="YES"/>
+        <relationship name="mentionedEmails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Email" inverseName="cc" inverseEntity="Email" syncable="YES"/>
+        <relationship name="receivedEmails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Email" inverseName="from" inverseEntity="Email" syncable="YES"/>
+        <relationship name="sentEmails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Email" inverseName="to" inverseEntity="Email" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Email" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="EmailUser" positionX="-54" positionY="27" width="128" height="165"/>
+        <element name="EmailAttachements" positionX="-45" positionY="90" width="128" height="105"/>
+    </elements>
+</model>

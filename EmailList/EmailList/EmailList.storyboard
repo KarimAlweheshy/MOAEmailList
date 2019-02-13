@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zyH-cQ-1Jb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Email List-->
+        <scene sceneID="u0O-7y-DYt">
+            <objects>
+                <viewController id="zyH-cQ-1Jb" customClass="EmailListViewController" customModule="Email" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wpl-id-Qvy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTP-7G-JIF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcW-AQ-ZPe">
+                                        <rect key="frame" x="16" y="16" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Al-Yo-8Hd">
+                                        <rect key="frame" x="16" y="52.5" width="42" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="100" id="icq-8d-wOP"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="1Al-Yo-8Hd" secondAttribute="bottom" constant="16" id="3CC-CO-Gdx"/>
+                                    <constraint firstItem="1Al-Yo-8Hd" firstAttribute="leading" secondItem="oTP-7G-JIF" secondAttribute="leading" constant="16" id="55W-Ub-h7w"/>
+                                    <constraint firstItem="AcW-AQ-ZPe" firstAttribute="top" secondItem="oTP-7G-JIF" secondAttribute="top" constant="16" id="6Pj-37-Fct"/>
+                                    <constraint firstItem="1Al-Yo-8Hd" firstAttribute="top" secondItem="AcW-AQ-ZPe" secondAttribute="bottom" constant="16" id="FPP-h1-gFN"/>
+                                    <constraint firstAttribute="trailing" secondItem="AcW-AQ-ZPe" secondAttribute="trailing" constant="16" id="Yl4-S3-g3n"/>
+                                    <constraint firstItem="AcW-AQ-ZPe" firstAttribute="leading" secondItem="oTP-7G-JIF" secondAttribute="leading" constant="16" id="Ze0-x2-bcT"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Al-Yo-8Hd" secondAttribute="trailing" constant="16" id="h9S-cF-Hwo"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oTP-7G-JIF" firstAttribute="width" secondItem="Wpl-id-Qvy" secondAttribute="width" id="07m-zh-XiN"/>
+                            <constraint firstItem="oTP-7G-JIF" firstAttribute="top" secondItem="SPE-Qp-Ydk" secondAttribute="top" id="1XA-k6-Zh7"/>
+                            <constraint firstItem="oTP-7G-JIF" firstAttribute="leading" secondItem="SPE-Qp-Ydk" secondAttribute="leading" id="RFp-dg-gwN"/>
+                            <constraint firstItem="SPE-Qp-Ydk" firstAttribute="trailing" secondItem="oTP-7G-JIF" secondAttribute="trailing" id="ewP-ok-frQ"/>
+                            <constraint firstItem="SPE-Qp-Ydk" firstAttribute="bottom" secondItem="oTP-7G-JIF" secondAttribute="bottom" id="yOJ-oQ-YRk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SPE-Qp-Ydk"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="F2A-Qe-1pH"/>
+                    <navigationItem key="navigationItem" title="Email List" id="vrm-hf-S0m">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dbA-Jj-gXv">
+                            <connections>
+                                <action selector="didTapAdd" destination="zyH-cQ-1Jb" id="6lb-wJ-Pf1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <connections>
+                        <outlet property="emailButtonsStackView" destination="1Al-Yo-8Hd" id="4rS-1P-lmC"/>
+                        <outlet property="filtersLabel" destination="AcW-AQ-ZPe" id="iwX-Gg-x9n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xsV-5S-DYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="374" y="-282"/>
+        </scene>
+    </scenes>
+</document>
