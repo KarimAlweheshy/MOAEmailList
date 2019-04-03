@@ -22,6 +22,7 @@
 		F6D06BC42216B27E008192BE /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D06BC32216B27E008192BE /* MockView.swift */; };
 		F6D06BC62216B33A008192BE /* MockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D06BC52216B33A008192BE /* MockInteractor.swift */; };
 		F6D06BC82216B38C008192BE /* MockRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D06BC72216B38C008192BE /* MockRouter.swift */; };
+		F6D06BCA221701CB008192BE /* InteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D06BC9221701CB008192BE /* InteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		F6D06BC32216B27E008192BE /* MockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
 		F6D06BC52216B33A008192BE /* MockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInteractor.swift; sourceTree = "<group>"; };
 		F6D06BC72216B38C008192BE /* MockRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRouter.swift; sourceTree = "<group>"; };
+		F6D06BC9221701CB008192BE /* InteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,12 +135,10 @@
 		F66EB4192211CCD000D177C5 /* EmailListTests */ = {
 			isa = PBXGroup;
 			children = (
-				F6D06BBF2216AD25008192BE /* MockNetworking.swift */,
-				F6D06BC32216B27E008192BE /* MockView.swift */,
-				F6D06BC52216B33A008192BE /* MockInteractor.swift */,
-				F6D06BC72216B38C008192BE /* MockRouter.swift */,
+				F6D06BCB221701F6008192BE /* Mocks */,
 				F66EB41A2211CCD000D177C5 /* ModuleTests.swift */,
 				F6D06BC12216B20F008192BE /* PresenterTests.swift */,
+				F6D06BC9221701CB008192BE /* InteractorTests.swift */,
 				F66EB41C2211CCD000D177C5 /* Info.plist */,
 			);
 			path = EmailListTests;
@@ -162,6 +162,17 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6D06BCB221701F6008192BE /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F6D06BBF2216AD25008192BE /* MockNetworking.swift */,
+				F6D06BC32216B27E008192BE /* MockView.swift */,
+				F6D06BC52216B33A008192BE /* MockInteractor.swift */,
+				F6D06BC72216B38C008192BE /* MockRouter.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D06BCA221701CB008192BE /* InteractorTests.swift in Sources */,
 				F6D06BC82216B38C008192BE /* MockRouter.swift in Sources */,
 				F6D06BC62216B33A008192BE /* MockInteractor.swift in Sources */,
 				F66EB41B2211CCD000D177C5 /* ModuleTests.swift in Sources */,
